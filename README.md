@@ -1,1 +1,3 @@
 # tiki-pipeline
+
+### This is a project about building a data warehouse from Tiki e-commerce data collected through API, with used techs such as: GCS, Spark, BigQuery, Airflow,...
