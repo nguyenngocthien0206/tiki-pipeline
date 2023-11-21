@@ -1,0 +1,32 @@
+[2023-11-21T16:20:14.372+0700] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tiki-stg.insert_author manual__2023-11-21T09:16:41.986153+00:00 [queued]>
+[2023-11-21T16:20:14.388+0700] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tiki-stg.insert_author manual__2023-11-21T09:16:41.986153+00:00 [queued]>
+[2023-11-21T16:20:14.388+0700] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-21T16:20:14.424+0700] {taskinstance.py:1382} INFO - Executing <Task(MySqlOperator): insert_author> on 2023-11-21 09:16:41.986153+00:00
+[2023-11-21T16:20:14.433+0700] {standard_task_runner.py:57} INFO - Started process 33164 to run task
+[2023-11-21T16:20:14.439+0700] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'tiki-stg', 'insert_author', 'manual__2023-11-21T09:16:41.986153+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/tiki-staging.py', '--cfg-path', '/tmp/tmpxyxm8knd']
+[2023-11-21T16:20:14.441+0700] {standard_task_runner.py:85} INFO - Job 55: Subtask insert_author
+[2023-11-21T16:20:14.512+0700] {task_command.py:416} INFO - Running <TaskInstance: tiki-stg.insert_author manual__2023-11-21T09:16:41.986153+00:00 [running]> on host DESKTOP-AN95RFH.
+[2023-11-21T16:20:14.671+0700] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='tiki-stg' AIRFLOW_CTX_TASK_ID='insert_author' AIRFLOW_CTX_EXECUTION_DATE='2023-11-21T09:16:41.986153+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-21T09:16:41.986153+00:00'
+[2023-11-21T16:20:14.673+0700] {sql.py:274} INFO - Executing: LOAD DATA INFILE "/home/thien/tiki/csv/authors.csv" INTO TABLE author FIELDS TERMINATED BY "," LINES TERMINATED BY "\n" IGNORE 1 ROWS;
+[2023-11-21T16:20:14.688+0700] {base.py:73} INFO - Using connection ID 'tiki_conn' for task execution.
+[2023-11-21T16:20:14.993+0700] {base.py:73} INFO - Using connection ID 'tiki_conn' for task execution.
+[2023-11-21T16:20:15.018+0700] {sql.py:418} INFO - Running statement: LOAD DATA INFILE "/home/***/tiki/csv/authors.csv" INTO TABLE author FIELDS TERMINATED BY "," LINES TERMINATED BY "\n" IGNORE 1 ROWS;, parameters: None
+[2023-11-21T16:20:15.025+0700] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/airflow/providers/common/sql/operators/sql.py", line 280, in execute
+    output = hook.run(
+  File "/usr/local/lib/python3.10/dist-packages/airflow/providers/common/sql/hooks/sql.py", line 392, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/usr/local/lib/python3.10/dist-packages/airflow/providers/common/sql/hooks/sql.py", line 423, in _run_command
+    cur.execute(sql_statement)
+  File "/usr/local/lib/python3.10/dist-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/usr/local/lib/python3.10/dist-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/usr/local/lib/python3.10/dist-packages/MySQLdb/connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.OperationalError: (1290, 'The MySQL server is running with the --secure-file-priv option so it cannot execute this statement')
+[2023-11-21T16:20:15.033+0700] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=tiki-stg, task_id=insert_author, execution_date=20231121T091641, start_date=20231121T092014, end_date=20231121T092015
+[2023-11-21T16:20:15.069+0700] {standard_task_runner.py:104} ERROR - Failed to execute job 55 for task insert_author ((1290, 'The MySQL server is running with the --secure-file-priv option so it cannot execute this statement'); 33164)
+[2023-11-21T16:20:15.095+0700] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-21T16:20:15.128+0700] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,25 @@
+[2023-11-21T20:35:08.845+0700] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tiki-stg.add_fk_review_customer manual__2023-11-21T13:32:23.985101+00:00 [queued]>
+[2023-11-21T20:35:08.861+0700] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tiki-stg.add_fk_review_customer manual__2023-11-21T13:32:23.985101+00:00 [queued]>
+[2023-11-21T20:35:08.861+0700] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-21T20:35:08.902+0700] {taskinstance.py:1382} INFO - Executing <Task(MySqlOperator): add_fk_review_customer> on 2023-11-21 13:32:23.985101+00:00
+[2023-11-21T20:35:08.909+0700] {standard_task_runner.py:57} INFO - Started process 3980 to run task
+[2023-11-21T20:35:08.918+0700] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'tiki-stg', 'add_fk_review_customer', 'manual__2023-11-21T13:32:23.985101+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/tiki-staging.py', '--cfg-path', '/tmp/tmpf770ftj7']
+[2023-11-21T20:35:08.920+0700] {standard_task_runner.py:85} INFO - Job 84: Subtask add_fk_review_customer
+[2023-11-21T20:35:08.994+0700] {task_command.py:416} INFO - Running <TaskInstance: tiki-stg.add_fk_review_customer manual__2023-11-21T13:32:23.985101+00:00 [running]> on host DESKTOP-AN95RFH.
+[2023-11-21T20:35:09.124+0700] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='tiki-stg' AIRFLOW_CTX_TASK_ID='add_fk_review_customer' AIRFLOW_CTX_EXECUTION_DATE='2023-11-21T13:32:23.985101+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-21T13:32:23.985101+00:00'
+[2023-11-21T20:35:09.125+0700] {sql.py:274} INFO - Executing: 
+    ALTER TABLE review
+    ADD CONSTRAINT fk_review_customer
+    FOREIGN KEY (customer_id)
+    REFERENCES customer(customer_id)
+[2023-11-21T20:35:09.137+0700] {base.py:73} INFO - Using connection ID 'tiki_conn' for task execution.
+[2023-11-21T20:35:09.400+0700] {base.py:73} INFO - Using connection ID 'tiki_conn' for task execution.
+[2023-11-21T20:35:09.410+0700] {sql.py:418} INFO - Running statement: 
+    ALTER TABLE review
+    ADD CONSTRAINT fk_review_customer
+    FOREIGN KEY (customer_id)
+    REFERENCES customer(customer_id), parameters: None
+[2023-11-21T20:35:09.644+0700] {sql.py:427} INFO - Rows affected: 0
+[2023-11-21T20:35:09.653+0700] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=tiki-stg, task_id=add_fk_review_customer, execution_date=20231121T133223, start_date=20231121T133508, end_date=20231121T133509
+[2023-11-21T20:35:09.691+0700] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-21T20:35:09.709+0700] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

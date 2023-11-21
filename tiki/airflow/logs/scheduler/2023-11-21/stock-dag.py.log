@@ -1,0 +1,70 @@
+[2023-11-21T14:40:31.467+0700] {processor.py:157} INFO - Started process (PID=24444) to work on /root/airflow/dags/stock-dag.py
+[2023-11-21T14:40:31.468+0700] {processor.py:829} INFO - Processing file /root/airflow/dags/stock-dag.py for tasks to queue
+[2023-11-21T14:40:31.469+0700] {logging_mixin.py:154} INFO - [2023-11-21T14:40:31.468+0700] {dagbag.py:536} INFO - Filling up the DagBag from /root/airflow/dags/stock-dag.py
+[2023-11-21T14:40:31.472+0700] {logging_mixin.py:154} INFO - [2023-11-21T14:40:31.472+0700] {dagbag.py:346} ERROR - Failed to import: /root/airflow/dags/stock-dag.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/airflow/dags/stock-dag.py", line 1, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+[2023-11-21T14:40:31.473+0700] {processor.py:841} WARNING - No viable dags retrieved from /root/airflow/dags/stock-dag.py
+[2023-11-21T14:40:31.518+0700] {processor.py:179} INFO - Processing /root/airflow/dags/stock-dag.py took 0.056 seconds
+[2023-11-21T14:41:01.700+0700] {processor.py:157} INFO - Started process (PID=24537) to work on /root/airflow/dags/stock-dag.py
+[2023-11-21T14:41:01.701+0700] {processor.py:829} INFO - Processing file /root/airflow/dags/stock-dag.py for tasks to queue
+[2023-11-21T14:41:01.702+0700] {logging_mixin.py:154} INFO - [2023-11-21T14:41:01.702+0700] {dagbag.py:536} INFO - Filling up the DagBag from /root/airflow/dags/stock-dag.py
+[2023-11-21T14:41:01.705+0700] {logging_mixin.py:154} INFO - [2023-11-21T14:41:01.704+0700] {dagbag.py:346} ERROR - Failed to import: /root/airflow/dags/stock-dag.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/airflow/dags/stock-dag.py", line 1, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+[2023-11-21T14:41:01.705+0700] {processor.py:841} WARNING - No viable dags retrieved from /root/airflow/dags/stock-dag.py
+[2023-11-21T14:41:01.738+0700] {processor.py:179} INFO - Processing /root/airflow/dags/stock-dag.py took 0.041 seconds
+[2023-11-21T14:41:32.576+0700] {processor.py:157} INFO - Started process (PID=24671) to work on /root/airflow/dags/stock-dag.py
+[2023-11-21T14:41:32.585+0700] {processor.py:829} INFO - Processing file /root/airflow/dags/stock-dag.py for tasks to queue
+[2023-11-21T14:41:32.586+0700] {logging_mixin.py:154} INFO - [2023-11-21T14:41:32.585+0700] {dagbag.py:536} INFO - Filling up the DagBag from /root/airflow/dags/stock-dag.py
+[2023-11-21T14:41:32.856+0700] {logging_mixin.py:154} INFO - [2023-11-21T14:41:32.854+0700] {dagbag.py:346} ERROR - Failed to import: /root/airflow/dags/stock-dag.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/airflow/dags/stock-dag.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+[2023-11-21T14:41:32.857+0700] {processor.py:841} WARNING - No viable dags retrieved from /root/airflow/dags/stock-dag.py
+[2023-11-21T14:41:32.881+0700] {processor.py:179} INFO - Processing /root/airflow/dags/stock-dag.py took 0.308 seconds
+[2023-11-21T14:42:03.222+0700] {processor.py:157} INFO - Started process (PID=24768) to work on /root/airflow/dags/stock-dag.py
+[2023-11-21T14:42:03.223+0700] {processor.py:829} INFO - Processing file /root/airflow/dags/stock-dag.py for tasks to queue
+[2023-11-21T14:42:03.224+0700] {logging_mixin.py:154} INFO - [2023-11-21T14:42:03.224+0700] {dagbag.py:536} INFO - Filling up the DagBag from /root/airflow/dags/stock-dag.py
+[2023-11-21T14:42:03.478+0700] {logging_mixin.py:154} INFO - [2023-11-21T14:42:03.476+0700] {dagbag.py:346} ERROR - Failed to import: /root/airflow/dags/stock-dag.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/airflow/dags/stock-dag.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+[2023-11-21T14:42:03.478+0700] {processor.py:841} WARNING - No viable dags retrieved from /root/airflow/dags/stock-dag.py
+[2023-11-21T14:42:03.525+0700] {processor.py:179} INFO - Processing /root/airflow/dags/stock-dag.py took 0.307 seconds
+[2023-11-21T14:42:33.929+0700] {processor.py:157} INFO - Started process (PID=24953) to work on /root/airflow/dags/stock-dag.py
+[2023-11-21T14:42:33.931+0700] {processor.py:829} INFO - Processing file /root/airflow/dags/stock-dag.py for tasks to queue
+[2023-11-21T14:42:33.933+0700] {logging_mixin.py:154} INFO - [2023-11-21T14:42:33.932+0700] {dagbag.py:536} INFO - Filling up the DagBag from /root/airflow/dags/stock-dag.py
+[2023-11-21T14:42:34.232+0700] {logging_mixin.py:154} INFO - [2023-11-21T14:42:34.230+0700] {dagbag.py:346} ERROR - Failed to import: /root/airflow/dags/stock-dag.py
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/root/airflow/dags/stock-dag.py", line 3, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+[2023-11-21T14:42:34.232+0700] {processor.py:841} WARNING - No viable dags retrieved from /root/airflow/dags/stock-dag.py
+[2023-11-21T14:42:34.488+0700] {processor.py:179} INFO - Processing /root/airflow/dags/stock-dag.py took 0.562 seconds

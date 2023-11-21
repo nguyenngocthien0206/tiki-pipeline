@@ -1,0 +1,32 @@
+[2023-11-21T20:31:59.035+0700] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tiki-stg.staging_written manual__2023-11-21T13:30:52.873265+00:00 [queued]>
+[2023-11-21T20:31:59.046+0700] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tiki-stg.staging_written manual__2023-11-21T13:30:52.873265+00:00 [queued]>
+[2023-11-21T20:31:59.047+0700] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-21T20:31:59.098+0700] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): staging_written> on 2023-11-21 13:30:52.873265+00:00
+[2023-11-21T20:31:59.118+0700] {standard_task_runner.py:57} INFO - Started process 3574 to run task
+[2023-11-21T20:31:59.126+0700] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'tiki-stg', 'staging_written', 'manual__2023-11-21T13:30:52.873265+00:00', '--job-id', '65', '--raw', '--subdir', 'DAGS_FOLDER/tiki-staging.py', '--cfg-path', '/tmp/tmptxf3t_1r']
+[2023-11-21T20:31:59.138+0700] {standard_task_runner.py:85} INFO - Job 65: Subtask staging_written
+[2023-11-21T20:31:59.385+0700] {task_command.py:416} INFO - Running <TaskInstance: tiki-stg.staging_written manual__2023-11-21T13:30:52.873265+00:00 [running]> on host DESKTOP-AN95RFH.
+[2023-11-21T20:31:59.663+0700] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='tiki-stg' AIRFLOW_CTX_TASK_ID='staging_written' AIRFLOW_CTX_EXECUTION_DATE='2023-11-21T13:30:52.873265+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-21T13:30:52.873265+00:00'
+[2023-11-21T20:31:59.712+0700] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/usr/local/lib/python3.10/dist-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/thien/tiki/staging.py", line 148, in written_stg
+    data_author = pd.read_csv("/home/thien/tiki/csv/authors.csv")
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py", line 948, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py", line 611, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py", line 1448, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py", line 1705, in _make_engine
+    self.handles = get_handle(
+  File "/usr/local/lib/python3.10/dist-packages/pandas/io/common.py", line 863, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/home/thien/tiki/csv/authors.csv'
+[2023-11-21T20:31:59.725+0700] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=tiki-stg, task_id=staging_written, execution_date=20231121T133052, start_date=20231121T133159, end_date=20231121T133159
+[2023-11-21T20:31:59.756+0700] {standard_task_runner.py:104} ERROR - Failed to execute job 65 for task staging_written ([Errno 2] No such file or directory: '/home/thien/tiki/csv/authors.csv'; 3574)
+[2023-11-21T20:31:59.788+0700] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-21T20:31:59.885+0700] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

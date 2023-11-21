@@ -1,0 +1,13 @@
+[2023-11-21T14:43:53.493+0700] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tiki-stg.staging_author scheduled__2023-11-21T00:00:00+00:00 [queued]>
+[2023-11-21T14:43:53.497+0700] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tiki-stg.staging_author scheduled__2023-11-21T00:00:00+00:00 [queued]>
+[2023-11-21T14:43:53.498+0700] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-21T14:43:53.520+0700] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): staging_author> on 2023-11-21 00:00:00+00:00
+[2023-11-21T14:43:53.522+0700] {standard_task_runner.py:57} INFO - Started process 25184 to run task
+[2023-11-21T14:43:53.525+0700] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'tiki-stg', 'staging_author', 'scheduled__2023-11-21T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/tiki-staging.py', '--cfg-path', '/tmp/tmpofcmve23']
+[2023-11-21T14:43:53.527+0700] {standard_task_runner.py:85} INFO - Job 9: Subtask staging_author
+[2023-11-21T14:43:53.650+0700] {task_command.py:416} INFO - Running <TaskInstance: tiki-stg.staging_author scheduled__2023-11-21T00:00:00+00:00 [running]> on host DESKTOP-AN95RFH.
+[2023-11-21T14:43:53.744+0700] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='tiki-stg' AIRFLOW_CTX_TASK_ID='staging_author' AIRFLOW_CTX_EXECUTION_DATE='2023-11-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-21T00:00:00+00:00'
+[2023-11-21T14:43:53.757+0700] {python.py:194} INFO - Done. Returned value was: None
+[2023-11-21T14:43:53.761+0700] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=tiki-stg, task_id=staging_author, execution_date=20231121T000000, start_date=20231121T074353, end_date=20231121T074353
+[2023-11-21T14:43:53.819+0700] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-21T14:43:53.833+0700] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

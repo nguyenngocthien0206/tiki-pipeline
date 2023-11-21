@@ -1,0 +1,58 @@
+[2023-11-21T16:14:33.631+0700] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tiki-stg.create_product_table manual__2023-11-21T09:10:41.442661+00:00 [queued]>
+[2023-11-21T16:14:33.647+0700] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tiki-stg.create_product_table manual__2023-11-21T09:10:41.442661+00:00 [queued]>
+[2023-11-21T16:14:33.647+0700] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-21T16:14:33.683+0700] {taskinstance.py:1382} INFO - Executing <Task(MySqlOperator): create_product_table> on 2023-11-21 09:10:41.442661+00:00
+[2023-11-21T16:14:33.692+0700] {standard_task_runner.py:57} INFO - Started process 32643 to run task
+[2023-11-21T16:14:33.698+0700] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'tiki-stg', 'create_product_table', 'manual__2023-11-21T09:10:41.442661+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/tiki-staging.py', '--cfg-path', '/tmp/tmpenew7_pd']
+[2023-11-21T16:14:33.700+0700] {standard_task_runner.py:85} INFO - Job 33: Subtask create_product_table
+[2023-11-21T16:14:33.767+0700] {task_command.py:416} INFO - Running <TaskInstance: tiki-stg.create_product_table manual__2023-11-21T09:10:41.442661+00:00 [running]> on host DESKTOP-AN95RFH.
+[2023-11-21T16:14:33.903+0700] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='tiki-stg' AIRFLOW_CTX_TASK_ID='create_product_table' AIRFLOW_CTX_EXECUTION_DATE='2023-11-21T09:10:41.442661+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-21T09:10:41.442661+00:00'
+[2023-11-21T16:14:33.904+0700] {sql.py:274} INFO - Executing: 
+    CREATE TABLE product IF NOT EXISTS (
+        product_id VARCHAR(20) PRIMARY KEY,
+        product_name TEXT,
+        original_price FLOAT,
+        quantity_sold INT,
+        rating_average FLOAT,
+        review_count INT,
+        seller_id VARCHAR(20),
+        seller_type VARCHAR(45),
+        seller_product_id VARCHAR(20),
+        seller_product_sku VARCHAR(20),
+        category_id VARCHAR(200)
+    )
+[2023-11-21T16:14:33.913+0700] {base.py:73} INFO - Using connection ID 'tiki_conn' for task execution.
+[2023-11-21T16:14:34.143+0700] {base.py:73} INFO - Using connection ID 'tiki_conn' for task execution.
+[2023-11-21T16:14:34.165+0700] {sql.py:418} INFO - Running statement: 
+    CREATE TABLE product IF NOT EXISTS (
+        product_id VARCHAR(20) PRIMARY KEY,
+        product_name TEXT,
+        original_price FLOAT,
+        quantity_sold INT,
+        rating_average FLOAT,
+        review_count INT,
+        seller_id VARCHAR(20),
+        seller_type VARCHAR(45),
+        seller_product_id VARCHAR(20),
+        seller_product_sku VARCHAR(20),
+        category_id VARCHAR(200)
+    ), parameters: None
+[2023-11-21T16:14:34.169+0700] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/airflow/providers/common/sql/operators/sql.py", line 280, in execute
+    output = hook.run(
+  File "/usr/local/lib/python3.10/dist-packages/airflow/providers/common/sql/hooks/sql.py", line 392, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/usr/local/lib/python3.10/dist-packages/airflow/providers/common/sql/hooks/sql.py", line 423, in _run_command
+    cur.execute(sql_statement)
+  File "/usr/local/lib/python3.10/dist-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/usr/local/lib/python3.10/dist-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+  File "/usr/local/lib/python3.10/dist-packages/MySQLdb/connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IF NOT EXISTS (\n        product_id VARCHAR(20) PRIMARY KEY,\n        product_name' at line 1")
+[2023-11-21T16:14:34.176+0700] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=tiki-stg, task_id=create_product_table, execution_date=20231121T091041, start_date=20231121T091433, end_date=20231121T091434
+[2023-11-21T16:14:34.208+0700] {standard_task_runner.py:104} ERROR - Failed to execute job 33 for task create_product_table ((1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IF NOT EXISTS (\n        product_id VARCHAR(20) PRIMARY KEY,\n        product_name' at line 1"); 32643)
+[2023-11-21T16:14:34.233+0700] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-21T16:14:34.269+0700] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

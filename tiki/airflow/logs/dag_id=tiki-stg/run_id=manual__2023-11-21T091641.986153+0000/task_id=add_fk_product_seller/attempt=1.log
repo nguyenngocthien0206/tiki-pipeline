@@ -1,0 +1,25 @@
+[2023-11-21T16:19:38.976+0700] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tiki-stg.add_fk_product_seller manual__2023-11-21T09:16:41.986153+00:00 [queued]>
+[2023-11-21T16:19:38.993+0700] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tiki-stg.add_fk_product_seller manual__2023-11-21T09:16:41.986153+00:00 [queued]>
+[2023-11-21T16:19:38.994+0700] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-11-21T16:19:39.031+0700] {taskinstance.py:1382} INFO - Executing <Task(MySqlOperator): add_fk_product_seller> on 2023-11-21 09:16:41.986153+00:00
+[2023-11-21T16:19:39.040+0700] {standard_task_runner.py:57} INFO - Started process 33072 to run task
+[2023-11-21T16:19:39.046+0700] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'tiki-stg', 'add_fk_product_seller', 'manual__2023-11-21T09:16:41.986153+00:00', '--job-id', '49', '--raw', '--subdir', 'DAGS_FOLDER/tiki-staging.py', '--cfg-path', '/tmp/tmp1g6hxa2n']
+[2023-11-21T16:19:39.048+0700] {standard_task_runner.py:85} INFO - Job 49: Subtask add_fk_product_seller
+[2023-11-21T16:19:39.126+0700] {task_command.py:416} INFO - Running <TaskInstance: tiki-stg.add_fk_product_seller manual__2023-11-21T09:16:41.986153+00:00 [running]> on host DESKTOP-AN95RFH.
+[2023-11-21T16:19:39.274+0700] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='tiki-stg' AIRFLOW_CTX_TASK_ID='add_fk_product_seller' AIRFLOW_CTX_EXECUTION_DATE='2023-11-21T09:16:41.986153+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-21T09:16:41.986153+00:00'
+[2023-11-21T16:19:39.275+0700] {sql.py:274} INFO - Executing: 
+    ALTER TABLE product
+    ADD CONSTRAINT fk_product_seller
+    FOREIGN KEY (seller_id)
+    REFERENCES seller(seller_id)
+[2023-11-21T16:19:39.287+0700] {base.py:73} INFO - Using connection ID 'tiki_conn' for task execution.
+[2023-11-21T16:19:39.545+0700] {base.py:73} INFO - Using connection ID 'tiki_conn' for task execution.
+[2023-11-21T16:19:39.573+0700] {sql.py:418} INFO - Running statement: 
+    ALTER TABLE product
+    ADD CONSTRAINT fk_product_seller
+    FOREIGN KEY (seller_id)
+    REFERENCES seller(seller_id), parameters: None
+[2023-11-21T16:19:40.069+0700] {sql.py:427} INFO - Rows affected: 0
+[2023-11-21T16:19:40.080+0700] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=tiki-stg, task_id=add_fk_product_seller, execution_date=20231121T091641, start_date=20231121T091938, end_date=20231121T091940
+[2023-11-21T16:19:40.147+0700] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-21T16:19:40.336+0700] {taskinstance.py:2778} INFO - 5 downstream tasks scheduled from follow-on schedule check
